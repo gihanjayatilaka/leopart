@@ -117,6 +117,10 @@ class VOCDataset(VisionDataset):
             raise ValueError(f"No support for image set {self.image_set}")
         seg_dir = os.path.join(root, seg_folder)
         image_dir = os.path.join(root, 'images')
+        
+        if False: print("DEBUG: 121: ",seg_dir,image_dir,root)
+        if False: print("DEBUG: 122: ",os.path.isdir(seg_dir),os.path.isdir(image_dir),os.path.isdir(root))
+
         if not os.path.isdir(seg_dir) or not os.path.isdir(image_dir) or not os.path.isdir(root):
             raise RuntimeError('Dataset not found or corrupted.')
         splits_dir = os.path.join(root, 'sets')
